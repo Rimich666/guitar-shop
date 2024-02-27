@@ -1,0 +1,19 @@
+# Products
+
+## Создать новый продукт
+
+POST http://localhost:3444/products HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGM5OTZlMmM3NDA4MmZiYzdiNzBjZCIsImVtYWlsIjoic25vd0BwaXNlbS5sb2NhbCIsIm5hbWUiOiJCb2IiLCJpYXQiOjE2OTI1MTk4NTksImV4cCI6MTY5NTExMTg1OX0.wvXtCxwbjYugClkZl7zsw_SLhcqaANRD7kv8h-N2iCg
+
+{
+  "name": "name_name-name",
+  "type": "акустика",
+  "description": "это дескрипшенский дескриптор самой гитарной гитары на районе",
+  "idPhoto": "111111111111111111111111",
+  "article": "string",
+  "stringsCount": 6,
+  "price": 200000
+}
+
+###

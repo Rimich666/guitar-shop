@@ -1,0 +1,41 @@
+version: '3.5'
+services:
+  guitar-shop.products.postgres:
+    image: postgres:14-alpine
+    container_name: guitar-shop.products.postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: guitar-shop-products
+    ports:
+      - 5433:5432
+    volumes:
+      - guitar-shop.postgres.products:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U admin -d readme-posts" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+    networks:
+      - guitar-shop.products
+
+  guitar-shop.products.pgadmin:
+    image: dpage/pgadmin4
+    container_name: guitar-shop.products.pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "89179699365@mail.ru"
+      PGADMIN_DEFAULT_PASSWORD: "test"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    ports:
+      - 8082:80
+    networks:
+      - guitar-shop.products
+
+volumes:
+  guitar-shop.postgres.products:
+
+networks:
+  guitar-shop.products:
+      driver: bridge

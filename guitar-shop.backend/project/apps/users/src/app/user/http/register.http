@@ -1,0 +1,125 @@
+# Users
+
+## Создать нового пользователя
+
+POST http://localhost:3111/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "torans@overlook.net",
+  "name": "Jack",
+  "password": "111111"
+}
+
+###
+
+## Создать нового пользователя
+
+POST http://localhost:3111/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "snow@pisem.local",
+  "name": "Bob",
+  "password": "111111"
+}
+
+###
+
+## Создать нового пользователя
+
+POST http://localhost:3111/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "president@dka.local",
+  "name": "Иван Иванов",
+  "password": "111111"
+}
+
+###
+
+## Создать нового пользователя
+
+POST http://localhost:3111/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "fish@big.local",
+  "name": "Олег Сидоров",
+  "password": "111111"
+}
+
+###
+## Создать нового пользователя
+
+POST http://localhost:3111/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "test@pisem.local",
+  "name": "Пьер Безухов",
+  "password": "111111"
+}
+
+###
+## Создать нового пользователя
+
+POST http://localhost:3111/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "freedom@pisem.local",
+  "name": "Роланд Дискейн",
+  "password": "111111"
+}
+
+###
+## Создать нового пользователя
+
+POST http://localhost:3111/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "rolan@pochta.local",
+  "name": "Холи Гибни",
+  "password": "111111"
+}
+
+###
+## Создать нового пользователя
+
+POST http://localhost:3111/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "author@mir.local",
+  "name": "Джек Торренс",
+  "password": "111111"
+}
+
+###
+## Создать нового пользователя
+
+POST http://localhost:3111/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "test@lost.loca",
+  "name": "Антон Городецкий",
+  "password": "111111"
+}
+
+###
+## Создать нового пользователя
+
+POST http://localhost:3111/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "kujo-fan@story.local",
+  "name": "Борис Гесер",
+  "password": "111111"
+}
+
+###

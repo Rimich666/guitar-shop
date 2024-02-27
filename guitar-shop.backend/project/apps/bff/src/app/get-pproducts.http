@@ -1,0 +1,54 @@
+# Posts
+
+# electro = 'электро',
+# acoustics = 'акустика',
+# ukulele = 'укулеле'
+
+
+
+# four = 4,
+# six = 6,
+# seven = 7,
+# twelve = 12
+
+# price
+# createDate
+
+# asc,
+# desc
+
+## Получить список товаров по фильтру
+
+GET http://localhost:3333/products
+
+###
+
+## Получить список товаров по фильтру
+
+GET http://localhost:3333/products?sort=price&order=asc&limit=2&page=1&type=electric&stringCount=seven HTTP/1.1
+
+###
+
+## Получить список товаров по фильтру
+
+GET http://localhost:3444/products?limit=2&page=3&type=electro&stringCount=six HTTP/1.1
+
+###
+
+## Получить список товаров по фильтру
+
+GET http://localhost:3444/products?page=3&type=electro&stringCount=six HTTP/1.1
+
+###
+
+## Получить список товаров по фильтру
+
+GET http://localhost:3444/products?type=electro&stringCount=six HTTP/1.1
+
+###
+
+## Получить список товаров по фильтру
+
+GET http://localhost:3444/products?stringCount=six HTTP/1.1
+
+###

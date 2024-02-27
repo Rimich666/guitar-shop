@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../../../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Products {
+  id           Int      @id @default(autoincrement())
+  name         String
+  guitarType   String   @map("type")
+  createDate   DateTime @default(now()) @map("create_date")
+  description  String
+  idPhoto      String
+  article      String
+  stringsCount Int
+  price        Int
+
+  @@index([createDate])
+  @@index([price])
+  @@index([guitarType])
+  @@index([stringsCount])
+  @@map("products")
+}

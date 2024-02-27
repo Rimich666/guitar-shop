@@ -1,0 +1,362 @@
+openapi: "3.0.2"
+info:
+  title: API сервер для проекта "guitar shop"
+  description: |-
+    * Список ресурсов и маршрутов сервера «Guitar shop».
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  version: "1.0"
+servers:
+  - url: http://localhost:3333
+tags:
+  - name: products
+    description: Действия с товаром.
+  - name: users
+    description: Действия с пользователем.
+
+paths:
+  /users/register:
+    post:
+      tags:
+        - users
+      summary: Регистрация пользователя
+      description: Регистрирует нового пользователя.
+      requestBody:
+        description: Информация для создания нового пользователя.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createUser'
+        required: true
+
+      responses:
+        "201":
+          description: Пользователь зарегистрирован. Объект пользователя.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+        "409":
+          description: Пользователь с таким email уже существует.
+
+  /users/login:
+    post:
+      tags:
+        - users
+      summary: Авторизация пользователя
+      description: Авторизует пользователя на основе логина и пароля
+      requestBody:
+        description: Информация о пользователе.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/loginInformation'
+        required: true
+
+      responses:
+        "200":
+          description: Пользователь авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+        "404":
+          description: Неверный логин или пароль.
+
+  /users/verify:
+    get:
+      tags:
+        - users
+      summary: Проверка состояния пользователя
+      description: Возвращает информацию по авторизованному пользователю
+
+      parameters:
+        - name: Authorization
+          in: headers
+          description: JWT Токен авторизации пользователя
+          schema:
+          $ref: '#/components/schemas/token'
+      responses:
+        "200":
+          description: Статус авторизации пользователя
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+        "404":
+          description: Пользователь не найден.
+
+  /products:
+    get:
+      tags:
+        - products
+      summary: Получение списка гитар.
+      parameters:
+        - name: sort
+          description: Поле сортировки 'price' или 'createDate'
+          in: query
+          schema:
+            type: string
+        - name: order
+          description: Направление сортировки 'asc' или 'desc'
+          in: query
+          schema:
+            type: string
+        - name: limit
+          description: Количество записей в ответе
+          in: query
+          schema:
+            type: integer
+        - name: page
+          description: Номер страницы
+          in: query
+          schema:
+            type: integer
+        - name: type
+          description: Тип гитары
+          in: query
+          schema:
+            type: string
+        - name: stringCount
+          description: Количество струн
+          in: query
+          schema:
+            type: integer
+
+      responses:
+        200:
+          description: Список товаров отфильтрованных согласно параметрам
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/product'
+
+    post:
+      tags:
+        - products
+      summary: Создание нового товара.
+      parameters:
+        - name: Authorization
+          in: headers
+          description: JWT Токен авторизации пользователя
+          schema:
+          $ref: '#/components/schemas/token'
+      requestBody:
+        description: Информация о новом товаре.
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                product:
+                  type: object
+                  $ref: '#/components/requestBodies/createProduct'
+        required: true
+      responses:
+        201:
+          description: Предложение создано
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+        401:
+          $ref: '#/components/responses/401'
+        400:
+          $ref: '#/components/responses/validationError'
+  /products/{productsID}:
+    get:
+      tags:
+        - products
+      summary: Получение детальной информации о предложении.
+      parameters:
+        - name: Authorization
+          in: headers
+          description: JWT Токен авторизации пользователя
+          schema:
+          $ref: '#/components/schemas/token'
+      responses:
+        200:
+          description: Информация о предложении
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+    patch:
+      tags:
+        - products
+      summary: Редактирование предложения.
+      parameters:
+        - name: Authorization
+          in: headers
+          description: JWT Токен авторизации пользователя
+          schema:
+          $ref: '#/components/schemas/token'
+      requestBody:
+        description: Информация о предложении.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/createProduct'
+        required: true
+      responses:
+        200:
+          description: Товар изменен
+        401:
+          $ref: '#/components/responses/401'
+        400:
+          $ref: '#/components/responses/validationError'
+
+    delete:
+      tags:
+        - products
+      summary: Удаление предложения.
+      parameters:
+        - name: Authorization
+          in: headers
+          description: JWT Токен авторизации пользователя
+          schema:
+          $ref: '#/components/schemas/token'
+      responses:
+        204:
+          description: Предложение удалено
+        401:
+          $ref: '#/components/responses/401'
+
+components:
+  schemas:
+    createUser:
+      type: object
+
+      properties:
+        email:
+          type: string
+          example: keks@htmlacademy.ru
+
+        name:
+          type: string
+          example: Keks
+
+        password:
+          type: string
+          example: 123456
+
+    user:
+      type: object
+
+      properties:
+        id:
+          type: string
+          example: 6329c3d6a04ab1061c6425ea
+
+        email:
+          type: string
+          example: keks@htmlacademy.ru
+
+        name:
+          type: string
+          example: Keks
+
+    loginInformation:
+      type: object
+
+      properties:
+        email:
+          type: string
+          example: keks@htmlacademy.ru
+
+        password:
+          type: string
+          example: 123456
+
+    token:
+      type: string
+      example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGM5OTZlMmM3NDA4MmZiYzdiNzBjZCIsImVtYWlsIjoic25vd0BwaXNlbS5sb2NhbCIsIm5hbWUiOiJCb2IiLCJpYXQiOjE2OTI1MTk4NTksImV4cCI6MTY5NTExMTg1OX0.wvXtCxwbjYugClkZl7zsw_SLhcqaANRD7kv8h-N2iCg
+
+    email:
+      type: object
+
+      properties:
+        email:
+          type: string
+          example: keks@htmlacademy.ru
+
+    product:
+      type: object
+
+      $ref:
+      properties:
+        id:
+          type: integer;
+          example: 45
+        name:
+          type: string;
+          example: keks keks
+        guitarType:
+          type: string;
+          example: electric
+        createDate:
+          type: date;
+          example: 2023-09-21 22:19:29.519
+        description:
+          type: string;
+          example: In 1989 the building was heavily damaged by fire, but it has since been restored. The Galactic Empire is nearing completion of the Death Star, a space station with the power to destroy entire planets. Initially composing light-hearted and irreverent works, he also wrote serious, sombre and religious pieces beginning in the 1930s. In 1989 the building was heavily damaged by fire, but it has since been restored. Any element of a tuple can be accessed in constant time.
+        urlPhoto:
+          type: string;
+          example: localhost:3222/2023/09/19/03129334-c502-430f-a35d-e45b54a07300.…
+        article:
+          type: string;
+          example: ngfr.kjfd
+        stringsCount:
+          type: integer;
+          example: 7
+        price:
+          type: number;
+          example: 100000
+
+  requestBodies:
+    createProduct:
+      type: object
+      $ref:
+      properties:
+        name:
+          type: string;
+          example: keks keks
+        guitarType:
+          type: string;
+          example: electric
+        article:
+          type: string;
+          example: ngfr.kjfd
+        stringsCount:
+          type: integer;
+          example: 6
+        price:
+          type: number;
+          example: 1000
+  responses:
+    401:
+      description: Пользователь не авторизован
+      content:
+        text/plain; charset=utf-8:
+          schema:
+            type: string
+            example: Ошибка авторизации пользователя
+    validationError:
+      description: Ошибка валидации
+      content:
+        text/plain; charset=utf-8:
+          schema:
+            type: string
+            example: Цена должна быть в пределах от 100 до 100 000
+
+
+

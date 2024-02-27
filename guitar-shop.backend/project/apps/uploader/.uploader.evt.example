@@ -1,0 +1,10 @@
+UPLOAD_DIRECTORY_PATH=E:/HTML_academy/guitar-shop/guitar-shop.backend/project/apps/uploader/uploads
+PORT=3222
+MONGO_DB_HOST=127.0.0.1
+MONGO_DB_PORT=27018
+MONGO_DB_NAME=guitar-shop-uploader
+MONGO_DB_USER=admin
+MONGO_DB_PASSWORD=test
+MONGO_DB_AUTH_BASE=admin
+HOST=localhost
+SERVE_ROOT=/static

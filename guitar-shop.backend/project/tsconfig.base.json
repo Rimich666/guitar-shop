@@ -1,0 +1,44 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@project/bff-config": ["libs/config/bff-config/src/index.ts"],
+      "@project/cli": ["libs/cli/cli/src/index.ts"],
+      "@project/cli-command": ["libs/cli/cli-command/src/index.ts"],
+      "@project/configurations": ["libs/config/configurations/src/index.ts"],
+      "@project/modules-options": ["libs/models/modules-options/src/index.ts"],
+      "@project/notify-config": ["libs/config/notify-config/src/index.ts"],
+      "@project/product-models": ["libs/models/product-models/src/index.ts"],
+      "@project/products-config": ["libs/config/products-config/src/index.ts"],
+      "@project/shared-constants": [
+        "libs/shared/shared-constants/src/index.ts"
+      ],
+      "@project/shared-dto": ["libs/shared/shared-dto/src/index.ts"],
+      "@project/shared-enhancers": [
+        "libs/shared/shared-enhancers/src/index.ts"
+      ],
+      "@project/shared-helpers": ["libs/shared/shared-helpers/src/index.ts"],
+      "@project/shared-types": ["libs/shared/shared-types/src/index.ts"],
+      "@project/uploader-config": ["libs/config/uploader-config/src/index.ts"],
+      "@project/uploader-models": ["libs/models/uploader-models/src/index.ts"],
+      "@project/user-models": ["libs/models/user-models/src/index.ts"],
+      "@project/users-config": ["libs/config/users-config/src/index.ts"],
+      "@project/util-core": ["libs/util/util-core/src/index.ts"],
+      "@project/util-types": ["libs/util/util-types/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

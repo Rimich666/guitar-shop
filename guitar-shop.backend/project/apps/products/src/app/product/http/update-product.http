@@ -1,0 +1,19 @@
+# Posts
+
+## Редактировать пост типа текст
+
+PATCH http://localhost:3444/products/12 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGM1NTg3YzYyOTkwOGNhMTQwYTE2NiIsImVtYWlsIjoidG9yYW5zQG92ZXJsb29rLm5ldCIsIm5hbWUiOiJKYWNrIiwiaWF0IjoxNjkyNTEyNzEwLCJleHAiOjE2OTUxMDQ3MTB9.rJGqGaewaNjI0PMAuYY4uK6BatsJ2ydAws29acQ1JQs
+Content-Type: application/json
+
+{
+  "name": "name_name-name",
+  "type": "акустика",
+  "description": "это дескрипшенский дескриптор самой гитарной гитары на районе",
+  "idPhoto": "111111111111111111111111",
+  "article": "string",
+  "stringsCount": 6,
+  "price": 100000
+}
+
+###

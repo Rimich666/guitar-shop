@@ -1,0 +1,6 @@
+PORT=3333
+HTTP_CLIENT_MAX_REDIRECTS=5
+HTTP_CLIENT_TIMEOUT=5000
+APP_USERS=http://localhost:3111/users
+APP_PRODUCTS=http://localhost:3444/products
+APP_FILES=http://localhost:3222/file

@@ -1,0 +1,48 @@
+{
+  "api": {
+    "names": [
+      "Jeffery",
+      "Rudy Jeffery",
+      "Wayne Rudy",
+      "Loyd Wayne",
+      "Elliott Loyd",
+      "Alisia Elliott",
+      "Guy Alisia",
+      "Mendy Alisia",
+      "Armand Mendy",
+      "Toshia Armand",
+      "Edyth Toshia",
+      "Abe Francisco",
+      "Wesley Francisco",
+      "Francisco Jeffery",
+      "Kiyoko Jeffery",
+      "Torri Kiyoko",
+      "Josefine Torri",
+      "Daine Josefine",
+      "Randell Daine",
+      "Winford Randell"
+    ],
+    "descriptions": [
+      "Any element of a tuple can be accessed in constant time. They are written as strings of consecutive alphanumeric characters, the first character being lowercase. Erlang is a general-purpose, concurrent, functional programming language. Tuples are containers for a fixed number of Erlang data types. Initially composing light-hearted and irreverent works, he also wrote serious, sombre and religious pieces beginning in the 1930s.",
+      "In 1989 the building was heavily damaged by fire, but it has since been restored. The Galactic Empire is nearing completion of the Death Star, a space station with the power to destroy entire planets. Initially composing light-hearted and irreverent works, he also wrote serious, sombre and religious pieces beginning in the 1930s. In 1989 the building was heavily damaged by fire, but it has since been restored. Any element of a tuple can be accessed in constant time.",
+      "Haskell features a type system with type inference and lazy evaluation. Initially composing light-hearted and irreverent works, he also wrote serious, sombre and religious pieces beginning in the 1930s. Erlang is known for its designs that are well suited for systems. She spent her earliest years reading classic literature, and writing poetry. She spent her earliest years reading classic literature, and writing poetry.",
+      "Ports are used to communicate with the external world. Messages can be sent to and received from ports, but these messages must obey the so-called 'port protocol.' Messages can be sent to and received from ports, but these messages must obey the so-called 'port protocol.' Where are my pants? Do you have any idea why this is not working?",
+      "Do you come here often? Erlang is a general-purpose, concurrent, functional programming language. Ports are created with the built-in function open_port. Type classes first appeared in the Haskell programming language. She spent her earliest years reading classic literature, and writing poetry.",
+      "Do you come here often? Make me a sandwich. She spent her earliest years reading classic literature, and writing poetry. Make me a sandwich. Tuples are containers for a fixed number of Erlang data types.",
+      "Initially composing light-hearted and irreverent works, he also wrote serious, sombre and religious pieces beginning in the 1930s. Tuples are containers for a fixed number of Erlang data types. In 1989 the building was heavily damaged by fire, but it has since been restored. The sequential subset of Erlang supports eager evaluation, single assignment, and dynamic typing. Messages can be sent to and received from ports, but these messages must obey the so-called 'port protocol.'",
+      "I don't even care. Erlang is known for its designs that are well suited for systems. In 1989 the building was heavily damaged by fire, but it has since been restored. He looked inquisitively at his keyboard and wrote another sentence. Atoms are used within a program to denote distinguished values.",
+      "Make me a sandwich. Its main implementation is the Glasgow Haskell Compiler. Any element of a tuple can be accessed in constant time. Initially composing light-hearted and irreverent works, he also wrote serious, sombre and religious pieces beginning in the 1930s. I don't even care.",
+      "Do you come here often? I don't even care. Any element of a tuple can be accessed in constant time. He looked inquisitively at his keyboard and wrote another sentence. Haskell is a standardized, general-purpose purely functional programming language, with non-strict semantics and strong static typing.",
+      "The Galactic Empire is nearing completion of the Death Star, a space station with the power to destroy entire planets. The sequential subset of Erlang supports eager evaluation, single assignment, and dynamic typing. Type classes first appeared in the Haskell programming language. They are written as strings of consecutive alphanumeric characters, the first character being lowercase. Do you have any idea why this is not working?",
+      "It is also a garbage-collected runtime system. Its main implementation is the Glasgow Haskell Compiler. She spent her earliest years reading classic literature, and writing poetry. The sequential subset of Erlang supports eager evaluation, single assignment, and dynamic typing. Do you have any idea why this is not working?",
+      "Erlang is known for its designs that are well suited for systems. They are written as strings of consecutive alphanumeric characters, the first character being lowercase. Haskell features a type system with type inference and lazy evaluation. Ports are used to communicate with the external world. He looked inquisitively at his keyboard and wrote another sentence.",
+      "Messages can be sent to and received from ports, but these messages must obey the so-called 'port protocol.' Do you come here often? The arguments can be primitive data types or compound data types. Ports are created with the built-in function open_port. Erlang is a general-purpose, concurrent, functional programming language.",
+      "She spent her earliest years reading classic literature, and writing poetry. Atoms can contain any character if they are enclosed within single quotes and an escape convention exists which allows any character to be used within an atom. Haskell features a type system with type inference and lazy evaluation. The arguments can be primitive data types or compound data types. Do you have any idea why this is not working?",
+      "The sequential subset of Erlang supports eager evaluation, single assignment, and dynamic typing. Erlang is known for its designs that are well suited for systems. Haskell features a type system with type inference and lazy evaluation. Tuples are containers for a fixed number of Erlang data types. Make me a sandwich.",
+      "Type classes first appeared in the Haskell programming language. Erlang is a general-purpose, concurrent, functional programming language. The sequential subset of Erlang supports eager evaluation, single assignment, and dynamic typing. The arguments can be primitive data types or compound data types. Haskell is a standardized, general-purpose purely functional programming language, with non-strict semantics and strong static typing.",
+      "I don't even care. Any element of a tuple can be accessed in constant time. Messages can be sent to and received from ports, but these messages must obey the so-called 'port protocol.' Erlang is known for its designs that are well suited for systems. Haskell is a standardized, general-purpose purely functional programming language, with non-strict semantics and strong static typing.",
+      "Initially composing light-hearted and irreverent works, he also wrote serious, sombre and religious pieces beginning in the 1930s. She spent her earliest years reading classic literature, and writing poetry. It is also a garbage-collected runtime system. Atoms are used within a program to denote distinguished values. She spent her earliest years reading classic literature, and writing poetry.",
+      "Make me a sandwich. The arguments can be primitive data types or compound data types. Atoms can contain any character if they are enclosed within single quotes and an escape convention exists which allows any character to be used within an atom. Ports are created with the built-in function open_port. Its main implementation is the Glasgow Haskell Compiler."
+    ]
+  }
+}

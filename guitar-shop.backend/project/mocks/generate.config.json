@@ -1,0 +1,8 @@
+{
+  "count": 200,
+  "usersUri": "mongodb://admin:test@localhost:27017/guitar-shop-users-mongo?authSource=admin",
+  "uploaderUri": "mongodb://admin:test@localhost:27018/guitar-shop-uploader?authSource=admin",
+  "mockDataPath": "./mocks/mock-data.json",
+  "imagesPath": "./mocks/images/",
+  "uploadPath": "E:/HTML_academy/guitar-shop/guitar-shop.backend/project/apps/uploader/uploads"
+}

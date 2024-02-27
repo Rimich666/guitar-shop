@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  guitar-shop.notify.fakesmtp:
+    image: gessnerfl/fake-smtp-server
+    container_name: guitar-shop.notify.fakesmtp
+    hostname: fakesmtp
+    ports:
+      - "8025:8025"
+      - "1083:8080"
+
+  guitar-shop.notify.rabbitmq:
+    image: rabbitmq:3.11-management
+    container_name: guitar-shop.notify.rabbitmq
+    ports:
+      - '1088:15672'
+      - '5672:5672'
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: test
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 5s
+      retries: 5
